@@ -1,6 +1,7 @@
-import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 
-export const carouselContainer = css({
-	display: 'flex',
-	flexFlow: 'row'
-});
+export const CarouselContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	width: 100%;
+`
