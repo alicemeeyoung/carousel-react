@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.22",
     "@types/jest": "24.0.23",
     "@types/node": "12.12.7",
     "@types/react-dom": "16.9.4",
-    "emotion": "^10.0.23",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0",
@@ -17,10 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint './src/**/*.{ts,tsx,js,jsx}' --fix"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "lint": "eslint './src/**/*.{ts,tsx,js,jsx}'"
   },
   "browserslist": {
     "production": [
