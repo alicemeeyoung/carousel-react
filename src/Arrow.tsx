@@ -7,12 +7,12 @@ export default function Arrow({ arrow }: { arrow: Arrows }) {
     color: 'white'
   };
   return arrow === 'left' ? (
-    <div className="left-arrow">
+    <button className="left-arrow">
       <img src="/arrow_left.png" />
-    </div>
+    </button>
   ) : (
-    <div className="right-arrow">
+    <button className="right-arrow">
       <img src="/arrow_right.png" />
-    </div>
+    </button>
   );
 }

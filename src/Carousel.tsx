@@ -2,17 +2,18 @@ import React from 'react';
 
 import Arrow from './Arrow';
 import { Arrows } from './enums';
+import Image from './Image';
 
-// import { CarouselContainer } from './CarouselStyles';
+import { CarouselContainer } from './CarouselStyles';
 
 export default function Carousel() {
+
 	return (
-		// <CarouselContainer>
-		<div>
+		<CarouselContainer>
 			<Arrow arrow={Arrows.Left} />
-			<div>Hello World</div>
+			{/* <div>Hello World</div> */}
+      <Image />
 			<Arrow arrow={Arrows.Right} />
-		</div>
-		// </CarouselContainer>
+    </CarouselContainer>
 	);
 }
