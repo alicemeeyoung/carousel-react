@@ -3,14 +3,17 @@ import React from 'react';
 import Arrow from './Arrow';
 import { Arrows } from './enums';
 
-import { CarouselContainer } from './CarouselStyles';
+// import { CarouselContainer } from './CarouselStyles';
 
 export default function Carousel() {
   return (
-    <CarouselContainer>
+    // <CarouselContainer>
+    <div>
       <Arrow arrow={Arrows.Left} />
-      Hello World
+      <div>Hello World</div>
       <Arrow arrow={Arrows.Right} />
-    </CarouselContainer>
+
+    </div>
+    // </CarouselContainer>
   );
 }
