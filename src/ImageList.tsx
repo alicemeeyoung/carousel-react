@@ -4,9 +4,11 @@ import Image from './Image';
 import { imageAPI } from './imageAPI';
 
 export default function ImageList() {
-  return (imageAPI.map((item, index) => {
+  const imagesAsList = (imageAPI.map((item, index) => {
         const {id, src} = item;
-        return <Image key={id} source={src}/>
+        return <li><Image key={id} source={src}/></li>
       })
     )
+
+  return <ul>{imagesAsList}</ul>
 }
