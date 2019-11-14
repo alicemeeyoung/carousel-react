@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-export default function Image() {
-  const [imageId, setImageId] = useState<number>(0);
+export default function Image({source}: {source: string}) {
   return (
-  <img src="/john_things_hired.png" width="80%"/>
+  <img src={source} width="80%" alt="hired" />
   );
 }
