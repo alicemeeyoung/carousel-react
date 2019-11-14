@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Image() {
-	return <div>Hello world from Image</div>;
+  const [imageId, setImageId] = useState<number>(0);
+  return <div>Hello world from Image</div>;
 }
