@@ -7,10 +7,10 @@ type arrowProps = {
 	arrow: Arrows;
 	setCurrentImageId: React.Dispatch<React.SetStateAction<number>>;
 	currentImageId: number;
+	lengthOfAPI?: number;
 };
 
-export default function Arrow({ arrow, setCurrentImageId, currentImageId }: arrowProps) {
-	const lengthOfAPI: number = Object.keys(imageAPI).length;
+export default function Arrow({ arrow, setCurrentImageId, currentImageId, lengthOfAPI }: arrowProps) {
 	return arrow === 'left' ? (
 		<button
 			className="left-arrow"
@@ -21,7 +21,8 @@ export default function Arrow({ arrow, setCurrentImageId, currentImageId }: arro
 	) : (
 		<button
 			className="right-arrow"
-			onClick={() => (currentImageId < lengthOfAPI - 1 ? setCurrentImageId(currentImageId + 1) : null)}
+			onClick={() =>
+				lengthOfAPI && currentImageId < lengthOfAPI - 1 ? setCurrentImageId(currentImageId + 1) : null}
 		>
 			<img src="/arrow_right.png" alt="Right arrow" />
 		</button>
