@@ -11,10 +11,10 @@ export default function Carousel() {
 	const [ currentImageId, setCurrentImageId ] = useState<number>(0);
 	return (
 		<CarouselContainer>
-			<Arrow arrow={Arrows.Left} setCurrentImageId={setCurrentImageId} />
+			<Arrow arrow={Arrows.Left} setCurrentImageId={setCurrentImageId} currentImageId={currentImageId} />
 			{/* <ImageList currentImageId={currentImageId} /> */}
 			<Image currentImageId={currentImageId} />
-			<Arrow arrow={Arrows.Right} setCurrentImageId={setCurrentImageId} />
+			<Arrow arrow={Arrows.Right} setCurrentImageId={setCurrentImageId} currentImageId={currentImageId} />
 		</CarouselContainer>
 	);
 }

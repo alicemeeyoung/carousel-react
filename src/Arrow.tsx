@@ -2,17 +2,20 @@ import React from 'react';
 
 import { Arrows } from './enums';
 
-export default function Arrow({ arrow }: { arrow: Arrows }) {
-  const style = {
-    color: 'white'
-  };
-  return arrow === 'left' ? (
-    <button className="left-arrow">
-      <img src="/arrow_left.png" />
-    </button>
-  ) : (
-    <button className="right-arrow">
-      <img src="/arrow_right.png" />
-    </button>
-  );
+type arrowProps = {
+	arrow: Arrows;
+	setCurrentImageId: React.Dispatch<React.SetStateAction<number>>;
+	currentImageId: number;
+};
+
+export default function Arrow({ arrow, setCurrentImageId, currentImageId }: arrowProps) {
+	return arrow === 'left' ? (
+		<button className="left-arrow" onClick={() => setCurrentImageId(currentImageId - 1)}>
+			<img src="/arrow_left.png" />
+		</button>
+	) : (
+		<button className="right-arrow" onClick={() => setCurrentImageId(currentImageId + 1)}>
+			<img src="/arrow_right.png" />
+		</button>
+	);
 }
