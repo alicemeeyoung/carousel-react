@@ -10,7 +10,10 @@ type arrowProps = {
 
 export default function Arrow({ arrow, setCurrentImageId, currentImageId }: arrowProps) {
 	return arrow === 'left' ? (
-		<button className="left-arrow" onClick={() => setCurrentImageId(currentImageId - 1)}>
+		<button
+			className="left-arrow"
+			onClick={() => (currentImageId !== 0 ? setCurrentImageId(currentImageId - 1) : null)}
+		>
 			<img src="/arrow_left.png" />
 		</button>
 	) : (
