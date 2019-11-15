@@ -24,7 +24,7 @@ export default function Carousel() {
 				/>
 			</CarouselContainer>
 			<DotsContainer>
-				<Dots imageAPI={imageAPI} />
+				<Dots imageAPI={imageAPI} setCurrentImageId={setCurrentImageId} />
 			</DotsContainer>
 		</div>
 	);

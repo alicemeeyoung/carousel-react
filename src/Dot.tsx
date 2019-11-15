@@ -2,6 +2,11 @@ import React from 'react';
 
 import { DotButton } from './CarouselStyles';
 
-export default function Dot() {
-	return <DotButton aria-pressed="true" />;
+export type dotProps = {
+	id: number;
+	setCurrentImageId: React.Dispatch<React.SetStateAction<number>>;
+};
+
+export default function Dot({ id, setCurrentImageId }: dotProps) {
+	return <DotButton onClick={() => setCurrentImageId(id)} />;
 }
