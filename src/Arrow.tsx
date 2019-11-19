@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Arrows } from './enums';
 import { imageAPI } from './imageAPI';
+import {ArrowStyles } from './CarouselStyles'
 
 type arrowProps = {
 	arrow: Arrows;
@@ -12,19 +13,13 @@ type arrowProps = {
 
 export default function Arrow({ arrow, setCurrentImageId, currentImageId, lengthOfAPI }: arrowProps) {
 	return arrow === 'left' ? (
-		<button
-			className="left-arrow"
-			onClick={() => (currentImageId !== 0 ? setCurrentImageId(currentImageId - 1) : null)}
-		>
+		<ArrowStyles onClick={() => (currentImageId !== 0 ? setCurrentImageId(currentImageId - 1) : null)}>
 			<img src="/arrow_left.png" alt="Left arrow" />
-		</button>
+			</ArrowStyles>
 	) : (
-		<button
-			className="right-arrow"
-			onClick={() =>
-				lengthOfAPI && currentImageId < lengthOfAPI - 1 ? setCurrentImageId(currentImageId + 1) : null}
-		>
-			<img src="/arrow_right.png" alt="Right arrow" />
-		</button>
+		<ArrowStyles onClick={() =>
+				lengthOfAPI && currentImageId < lengthOfAPI - 1 ? setCurrentImageId(currentImageId + 1) : null}>
+			<img src="/arrow_right.png" alt="Right arrow" />	
+		</ArrowStyles>
 	);
 }

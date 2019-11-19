@@ -10,6 +10,12 @@ export const DotsContainer = styled.div`
 	justify-content: center;
 `;
 
+export const ArrowStyles = styled.button`
+	height: 25%;
+	margin: auto;
+	border: none;
+`;
+
 export const DotButton = styled.button`
 	border: 1px solid black;
 	border-radius: 50%;
