@@ -1,25 +1,26 @@
-import React from 'react';
+import React, { useEffect, EffectCallback } from 'react';
 
 import { DotButton } from './CarouselStyles';
+import ImageList from './ImageList';
 
 export type dotProps = {
   id: number;
   setCurrentImageId: React.Dispatch<React.SetStateAction<number>>;
-  refElement: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>
+  refElement: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
+  imageRef: React.MutableRefObject<null>;
 };
 
 //@ts-ignore
 const scrollTo = (ref: React.MutableRefObject<HTMLImageElement>): void => {
-  console.log({ref})
-  window.scrollTo(0, ref.current.offsetTop)
-}
+  ref.current.scrollIntoView({
+    behavior: 'smooth'
+  });
+};
 
-export default function Dot({ id, setCurrentImageId, refElement }: dotProps) {
-  const handleButtonClick = () => {
-    console.log(refElement, id)
-    //@ts-ignore
-    scrollTo(refElement.current[id])
-  }
+export default function Dot({ id, refElement, imageRef }: dotProps) {
   //@ts-ignore
-  return <DotButton aria-pressed="false" onClick={handleButtonClick} />;
+  const scrollCallback = () => scrollTo(refElement.current[id], imageRef);
+
+  //@ts-ignore
+  return <DotButton aria-pressed="false" onClick={scrollCallback} />;
 }
