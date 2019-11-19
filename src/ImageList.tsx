@@ -7,7 +7,7 @@ import { imageAPI } from './imageAPI';
 
 const listStyles = css({
 	display: 'flex'
-})
+});
 
 export default function ImageList({ currentImageId }: { currentImageId: number }) {
 	return (
@@ -18,5 +18,5 @@ export default function ImageList({ currentImageId }: { currentImageId: number }
 				return <Image key={id} currentImageId={currentImageId} />;
 			})}
 		</dl>
-		);
+	);
 }
