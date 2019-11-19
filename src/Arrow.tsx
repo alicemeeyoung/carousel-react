@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Arrows } from './enums';
-import { imageAPI } from './imageAPI';
 import {ArrowStyles } from './CarouselStyles'
 
 type arrowProps = {

@@ -6,6 +6,7 @@ type dotsProps = {
 	imageAPI: any;
 	setCurrentImageId: React.Dispatch<React.SetStateAction<number>>;
 };
+
 export default function Dots({ imageAPI, setCurrentImageId }: dotsProps) {
 	const allImages = Object.values(imageAPI);
 	return (

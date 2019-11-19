@@ -8,5 +8,5 @@ export type dotProps = {
 };
 
 export default function Dot({ id, setCurrentImageId }: dotProps) {
-	return <DotButton onClick={() => setCurrentImageId(id)} />;
+	return <DotButton aria-pressed="false" onClick={() => setCurrentImageId(id)} />;
 }
