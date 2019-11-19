@@ -9,7 +9,12 @@
 // 	}
 // };
 
-export const imageAPI: any[] = [
+export type API = {
+  id: number,
+  src: string
+}
+
+export const imageAPI: API[] = [
   {
     id: 0,
     src: '/john_things_hired.png'

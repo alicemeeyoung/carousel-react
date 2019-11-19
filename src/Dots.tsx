@@ -1,19 +1,21 @@
-import React from 'react';
+import React, {useRef, createRef} from 'react';
 
 import Dot from './Dot';
 
 type dotsProps = {
   imageAPI: any;
   setCurrentImageId: React.Dispatch<React.SetStateAction<number>>;
+  refElement: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
 };
 
-export default function Dots({ imageAPI, setCurrentImageId }: dotsProps) {
-  const allImages = Object.values(imageAPI);
+export default function Dots({ imageAPI, setCurrentImageId, refElement }: dotsProps) {
+  // const refElement = useRef(imageAPI.map(() => createRef()));
+
   return (
     <dl>
-      {allImages.map((image: any) => {
+      {imageAPI.map((image: any) => {
         const { id }: { id: number } = image;
-        return <Dot key={id} id={id} setCurrentImageId={setCurrentImageId} />;
+        return <Dot refElement={refElement} key={id} id={id} setCurrentImageId={setCurrentImageId} />;
       })}
     </dl>
   );

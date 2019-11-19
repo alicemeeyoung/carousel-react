@@ -38,7 +38,7 @@ export const ImageStyle = styled.img`
   scroll-snap-align: start;
 `
 
-export const ImageListStyle = styled.dl`
+export const ImageListStyle = styled.div`
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;

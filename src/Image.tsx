@@ -1,7 +1,7 @@
 import React from 'react';
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
-import { imageAPI } from './imageAPI';
+// import { API } from './imageAPI';
 
 import { ImageStyle } from './CarouselStyles';
 
@@ -16,7 +16,8 @@ import { ImageStyle } from './CarouselStyles';
 //   return <ImageStyle src={matchingImgSrc} width="100%" alt="" />
 // }
 
-export default function Image({source}: {source?: string}) {
+export default function Image({source, refElement, index}: 
+  {source?: string, index: number, refElement: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>}) {
   if (!source) source=""
-  return <ImageStyle src={source} width="100%" alt="" />
+  return <ImageStyle ref={refElement.current[index]} src={source} width="100%" alt="" />
 } 
