@@ -17,6 +17,10 @@ export const imageAPI: any[] = [
   {
     id: 1,
     src: '/john_things_hiring.png'
+  },
+  {
+    id: 2,
+    src: '/john_things_hired.png'
   }
 ];
 

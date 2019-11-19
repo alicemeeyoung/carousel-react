@@ -22,4 +22,36 @@ export const DotButton = styled.button`
   width: 1rem;
   height: 1rem;
   margin: 0.2rem;
+
+  // &:hover {
+  //   background-color: blue;
+  // }
 `;
+
+//TESTS
+
+export const ScrollBar = styled.div`
+  overflow: auto;
+  white-space: nowrap;
+`
+export const ImageStyle = styled.img`
+  scroll-snap-align: start;
+`
+
+export const ImageListStyle = styled.dl`
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 1 rem;
+  list-style: none;
+
+  overflow-x: auto:
+  overflow-y: hidden;s
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  // ::-webkit-scrollbar {
+  //   display: none;
+  // }
+`
