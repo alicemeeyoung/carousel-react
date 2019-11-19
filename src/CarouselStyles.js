@@ -33,10 +33,10 @@ export const DotButton = styled.button`
 export const ScrollBar = styled.div`
   overflow: auto;
   white-space: nowrap;
-`
+`;
 export const ImageStyle = styled.img`
   scroll-snap-align: start;
-`
+`;
 
 export const ImageListStyle = styled.div`
   display: flex;
@@ -51,7 +51,7 @@ export const ImageListStyle = styled.div`
   scrollbar-width: none;
   -ms-overflow-style: none;
 
-  // ::-webkit-scrollbar {
-  //   display: none;
-  // }
-`
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
