@@ -3,18 +3,11 @@ import React from 'react';
 import { jsx, css } from '@emotion/core';
 
 import Image from './Image';
-import { imageAPI, API } from './imageAPI';
+import { imageAPI } from './imageAPI';
 import { ImageListStyle } from './CarouselStyles';
+import { imageListProps } from './types';
 
-export default function ImageList({
-  currentImageId,
-  imageRef,
-  imageListRef
-}: {
-  currentImageId: number;
-  imageRef: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
-  imageListRef: React.MutableRefObject<null>;
-}) {
+export default function ImageList({ imageRef, imageListRef }: imageListProps) {
   return (
     <ImageListStyle ref={imageListRef}>
       {imageAPI.map((item: any, index: number) => {

@@ -1,15 +1,9 @@
 import React from 'react';
 
 import { ImageStyle } from './CarouselStyles';
-export default function Image({
-  source,
-  imageRef,
-  index
-}: {
-  source?: string;
-  index: number;
-  imageRef: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
-}) {
+import { imageProps } from './types';
+
+export default function Image({ source, imageRef, index }: imageProps) {
   if (!source) source = '';
   return (
     <ImageStyle

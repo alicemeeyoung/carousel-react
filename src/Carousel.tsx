@@ -25,11 +25,7 @@ export default function Carousel() {
           setCurrentImageId={setCurrentImageId}
           currentImageId={currentImageId}
         />
-        <ImageList
-          imageListRef={imageListRef}
-          imageRef={imageRef}
-          currentImageId={currentImageId}
-        />
+        <ImageList imageListRef={imageListRef} imageRef={imageRef} />
         <Arrow
           imageRef={imageRef}
           arrow={Arrows.Right}

@@ -1,6 +1,17 @@
 import { Arrows } from './enums';
 
 // Props
+export type imageListProps = {
+  imageRef: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
+  imageListRef: React.MutableRefObject<null>;
+};
+
+export type imageProps = {
+  source?: string;
+  index: number;
+  imageRef: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
+};
+
 export type arrowProps = {
   arrow: Arrows;
   setCurrentImageId: React.Dispatch<React.SetStateAction<number>>;
