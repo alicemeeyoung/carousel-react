@@ -8,19 +8,19 @@ import { ImageListStyle } from './CarouselStyles';
 
 export default function ImageList({
   currentImageId,
-  refElement,
-  imageRef
+  imageRef,
+  imageListRef
 }: {
   currentImageId: number;
-  refElement: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
-  imageRef: React.MutableRefObject<null>;
+  imageRef: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
+  imageListRef: React.MutableRefObject<null>;
 }) {
   return (
-    <ImageListStyle ref={imageRef}>
+    <ImageListStyle ref={imageListRef}>
       {imageAPI.map((item: any, index: number) => {
         const { id, src } = item;
         return (
-          <Image refElement={refElement} key={id} source={src} index={index} />
+          <Image imageRef={imageRef} key={id} source={src} index={index} />
         );
       })}
     </ImageListStyle>

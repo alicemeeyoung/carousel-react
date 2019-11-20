@@ -5,7 +5,7 @@ import { DotButton } from './CarouselStyles';
 export type dotProps = {
   id: number;
   setCurrentImageId: React.Dispatch<React.SetStateAction<number>>;
-  refElement: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
+  imageRef: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
 };
 
 const scrollTo = (ref: React.RefObject<HTMLImageElement>): void => {
@@ -16,12 +16,11 @@ const scrollTo = (ref: React.RefObject<HTMLImageElement>): void => {
   }
 };
 
-export default function Dot({ id, setCurrentImageId, refElement }: dotProps) {
+export default function Dot({ id, setCurrentImageId, imageRef }: dotProps) {
   const handleDotClick = () => {
-    scrollTo(refElement.current[id]);
+    scrollTo(imageRef.current[id]);
     setCurrentImageId(id);
   };
 
-  //@ts-ignore
   return <DotButton aria-pressed="false" onClick={handleDotClick} />;
 }

@@ -8,7 +8,7 @@ type arrowProps = {
   setCurrentImageId: React.Dispatch<React.SetStateAction<number>>;
   currentImageId: number;
   lengthOfAPI?: number;
-  refElement: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
+  imageRef: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
 };
 
 const scrollTo = (ref: React.RefObject<HTMLImageElement>): void => {
@@ -24,16 +24,16 @@ export default function Arrow({
   setCurrentImageId,
   currentImageId,
   lengthOfAPI,
-  refElement
+  imageRef
 }: arrowProps) {
   const handleArrowClick = (direction: Arrows): void => {
     if (direction === 'left' && currentImageId !== 0) {
-      scrollTo(refElement.current[currentImageId - 1]);
+      scrollTo(imageRef.current[currentImageId - 1]);
       setCurrentImageId(currentImageId - 1);
     }
 
     if (direction === 'right' && lengthOfAPI && currentImageId < lengthOfAPI) {
-      scrollTo(refElement.current[currentImageId + 1]);
+      scrollTo(imageRef.current[currentImageId + 1]);
       setCurrentImageId(currentImageId + 1);
     }
   };

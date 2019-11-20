@@ -16,17 +16,17 @@ import { ImageStyle } from './CarouselStyles';
 
 export default function Image({
   source,
-  refElement,
+  imageRef,
   index
 }: {
   source?: string;
   index: number;
-  refElement: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
+  imageRef: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
 }) {
   if (!source) source = '';
   return (
     <ImageStyle
-      ref={refElement.current[index]}
+      ref={imageRef.current[index]}
       src={source}
       width="100%"
       alt=""

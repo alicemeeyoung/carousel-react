@@ -11,29 +11,30 @@ import { CarouselContainer, DotsContainer, ScrollBar } from './CarouselStyles';
 
 export default function Carousel() {
   const [currentImageId, setCurrentImageId] = useState<number>(0);
-  const refElement: React.MutableRefObject<React.RefObject<
+  const lengthOfAPI: number = Object.keys(imageAPI).length;
+
+  // Create refs
+  const imageRef: React.MutableRefObject<React.RefObject<
     HTMLImageElement
   >[]> = useRef(imageAPI.map(() => createRef()));
-
-  const imageRef: React.MutableRefObject<null> = useRef(null);
-  const lengthOfAPI: number = Object.keys(imageAPI).length;
+  const imageListRef: React.MutableRefObject<null> = useRef(null);
 
   return (
     <div css={{ width: '50%', margin: 'auto' }} className="carousel">
       <CarouselContainer>
         <Arrow
-          refElement={refElement}
+          imageRef={imageRef}
           arrow={Arrows.Left}
           setCurrentImageId={setCurrentImageId}
           currentImageId={currentImageId}
         />
         <ImageList
+          imageListRef={imageListRef}
           imageRef={imageRef}
-          refElement={refElement}
           currentImageId={currentImageId}
         />
         <Arrow
-          refElement={refElement}
+          imageRef={imageRef}
           arrow={Arrows.Right}
           setCurrentImageId={setCurrentImageId}
           currentImageId={currentImageId}
@@ -42,7 +43,7 @@ export default function Carousel() {
       </CarouselContainer>
       <DotsContainer>
         <Dots
-          refElement={refElement}
+          imageRef={imageRef}
           imageAPI={imageAPI}
           setCurrentImageId={setCurrentImageId}
         />

@@ -5,13 +5,13 @@ import Dot from './Dot';
 type dotsProps = {
   imageAPI: any;
   setCurrentImageId: React.Dispatch<React.SetStateAction<number>>;
-  refElement: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
+  imageRef: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
 };
 
 export default function Dots({
   imageAPI,
   setCurrentImageId,
-  refElement
+  imageRef
 }: dotsProps) {
   return (
     <dl>
@@ -19,7 +19,7 @@ export default function Dots({
         const { id }: { id: number } = image;
         return (
           <Dot
-            refElement={refElement}
+            imageRef={imageRef}
             key={id}
             id={id}
             setCurrentImageId={setCurrentImageId}
