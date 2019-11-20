@@ -4,7 +4,6 @@ import { jsx, css } from '@emotion/core';
 
 import Arrow from './Arrow';
 import ImageList from './ImageList';
-// import Image from './Image';
 import Dots from './Dots';
 import { Arrows } from './enums';
 import { imageAPI, API } from './imageAPI';
@@ -41,7 +40,6 @@ export default function Carousel() {
       </CarouselContainer>
       <DotsContainer>
         <Dots
-          imageRef={imageRef}
           refElement={refElement}
           imageAPI={imageAPI}
           setCurrentImageId={setCurrentImageId}
