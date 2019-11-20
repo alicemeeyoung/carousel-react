@@ -2,22 +2,8 @@ import React from 'react';
 
 import { Arrows } from './enums';
 import { ArrowStyles } from './CarouselStyles';
-
-type arrowProps = {
-  arrow: Arrows;
-  setCurrentImageId: React.Dispatch<React.SetStateAction<number>>;
-  currentImageId: number;
-  lengthOfAPI?: number;
-  imageRef: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
-};
-
-const scrollTo = (ref: React.RefObject<HTMLImageElement>): void => {
-  if (ref && ref.current) {
-    ref.current.scrollIntoView({
-      behavior: 'smooth'
-    });
-  }
-};
+import { arrowProps } from './types';
+import { scrollTo } from './shared';
 
 export default function Arrow({
   arrow,

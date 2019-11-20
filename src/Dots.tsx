@@ -1,12 +1,7 @@
 import React from 'react';
 
 import Dot from './Dot';
-
-type dotsProps = {
-  imageAPI: any;
-  setCurrentImageId: React.Dispatch<React.SetStateAction<number>>;
-  imageRef: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
-};
+import { dotsProps } from './types';
 
 export default function Dots({
   imageAPI,

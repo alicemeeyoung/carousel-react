@@ -28,12 +28,6 @@ export const DotButton = styled.button`
   // }
 `;
 
-//TESTS
-
-export const ScrollBar = styled.div`
-  overflow: auto;
-  white-space: nowrap;
-`;
 export const ImageStyle = styled.img`
   scroll-snap-align: start;
 `;

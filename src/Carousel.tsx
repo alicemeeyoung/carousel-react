@@ -1,13 +1,10 @@
 import React, { useState, useRef, createRef } from 'react';
-/** @jsx jsx */
-import { jsx, css } from '@emotion/core';
-
 import Arrow from './Arrow';
 import ImageList from './ImageList';
 import Dots from './Dots';
 import { Arrows } from './enums';
-import { imageAPI, API } from './imageAPI';
-import { CarouselContainer, DotsContainer, ScrollBar } from './CarouselStyles';
+import { imageAPI } from './imageAPI';
+import { CarouselContainer, DotsContainer } from './CarouselStyles';
 
 export default function Carousel() {
   const [currentImageId, setCurrentImageId] = useState<number>(0);
