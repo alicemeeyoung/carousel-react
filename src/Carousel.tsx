@@ -22,6 +22,7 @@ export default function Carousel() {
     <div css={{ width: '50%', margin: 'auto' }} className="carousel">
       <CarouselContainer>
         <Arrow
+          refElement={refElement}
           arrow={Arrows.Left}
           setCurrentImageId={setCurrentImageId}
           currentImageId={currentImageId}
@@ -32,6 +33,7 @@ export default function Carousel() {
           currentImageId={currentImageId}
         />
         <Arrow
+          refElement={refElement}
           arrow={Arrows.Right}
           setCurrentImageId={setCurrentImageId}
           currentImageId={currentImageId}

@@ -16,9 +16,12 @@ const scrollTo = (ref: React.RefObject<HTMLImageElement>): void => {
   }
 };
 
-export default function Dot({ id, refElement }: dotProps) {
-  const scrollCallback = () => scrollTo(refElement.current[id]);
+export default function Dot({ id, setCurrentImageId, refElement }: dotProps) {
+  const handleDotClick = () => {
+    scrollTo(refElement.current[id]);
+    setCurrentImageId(id);
+  };
 
   //@ts-ignore
-  return <DotButton aria-pressed="false" onClick={scrollCallback} />;
+  return <DotButton aria-pressed="false" onClick={handleDotClick} />;
 }
