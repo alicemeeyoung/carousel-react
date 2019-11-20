@@ -1,3 +1,5 @@
+/** @jsx, jsx */
+import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 export const CarouselContainer = styled.div`
@@ -14,19 +16,27 @@ export const ArrowStyles = styled.button`
   height: 25%;
   margin: auto;
   border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
 `;
 
-export const DotButton = styled.button`
-  border: 1px solid black;
-  border-radius: 50%;
-  width: 1rem;
-  height: 1rem;
-  margin: 0.2rem;
+const noOutline = css({
+  outline: 0
+});
 
-  // &:hover {
-  //   background-color: blue;
-  // }
-`;
+export const DotButton = styled.button(props => ({
+  border: '1px solid black',
+  borderRadius: '50%',
+  width: '1rem',
+  height: '1rem',
+  margin: '0.2rem',
+  cursor: 'pointer',
+  backgroundColor: props.pressed ? 'black' : 'none',
+  ':focus': noOutline
+}));
 
 export const ImageStyle = styled.img`
   scroll-snap-align: start;

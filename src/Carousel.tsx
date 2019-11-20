@@ -36,6 +36,7 @@ export default function Carousel() {
       </CarouselContainer>
       <DotsContainer>
         <Dots
+          currentImageId={currentImageId}
           imageRef={imageRef}
           imageAPI={imageAPI}
           setCurrentImageId={setCurrentImageId}

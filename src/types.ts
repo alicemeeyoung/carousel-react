@@ -22,12 +22,14 @@ export type arrowProps = {
 
 export type dotProps = {
   id: number;
+  currentImageId: number;
   setCurrentImageId: React.Dispatch<React.SetStateAction<number>>;
   imageRef: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
 };
 
 export type dotsProps = {
   imageAPI: any;
+  currentImageId: number;
   setCurrentImageId: React.Dispatch<React.SetStateAction<number>>;
   imageRef: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
 };

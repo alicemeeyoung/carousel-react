@@ -6,7 +6,8 @@ import { dotsProps } from './types';
 export default function Dots({
   imageAPI,
   setCurrentImageId,
-  imageRef
+  imageRef,
+  currentImageId
 }: dotsProps) {
   return (
     <dl>
@@ -14,6 +15,7 @@ export default function Dots({
         const { id }: { id: number } = image;
         return (
           <Dot
+            currentImageId={currentImageId}
             imageRef={imageRef}
             key={id}
             id={id}
