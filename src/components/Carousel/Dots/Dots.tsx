@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Dot from './Dot';
-import { dotsProps } from './types';
+import { dotsProps } from '../types';
 
 export default function Dots({
   imageAPI,

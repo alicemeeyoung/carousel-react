@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Carousel from './Carousel';
+import Carousel from '../components/Carousel/Carousel';
 
 const App: React.FC = () => {
   return (

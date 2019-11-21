@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Arrows } from './enums';
-import { ArrowStyles } from './CarouselStyles';
-import { arrowProps } from './types';
-import { scrollTo } from './shared';
+import { Arrows } from '../enums';
+import { ArrowStyles } from '../CarouselStyles';
+import { arrowProps } from '../types';
+import { scrollTo } from '../shared';
 
 export default function Arrow({
   arrow,

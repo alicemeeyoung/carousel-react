@@ -1,9 +1,9 @@
 import React, { useState, useRef, createRef } from 'react';
-import Arrow from './Arrow';
-import ImageList from './ImageList';
-import Dots from './Dots';
+import Arrow from './Arrow/Arrow';
+import ImageList from './Images/ImageList';
+import Dots from './Dots/Dots';
 import { Arrows } from './enums';
-import { imageAPI } from './imageAPI';
+import { imageAPI } from '../../imageAPI';
 import { CarouselContainer, DotsContainer } from './CarouselStyles';
 
 export default function Carousel() {

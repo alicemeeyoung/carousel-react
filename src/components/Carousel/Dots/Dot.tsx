@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { DotButton } from './CarouselStyles';
-import { dotProps } from './types';
-import { scrollTo } from './shared';
+import { DotButton } from '../CarouselStyles';
+import { dotProps } from '../types';
+import { scrollTo } from '../shared';
 
 export default function Dot({
   id,

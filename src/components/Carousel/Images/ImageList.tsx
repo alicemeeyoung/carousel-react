@@ -3,9 +3,9 @@ import React from 'react';
 import { jsx, css } from '@emotion/core';
 
 import Image from './Image';
-import { imageAPI } from './imageAPI';
-import { ImageListStyle } from './CarouselStyles';
-import { imageListProps } from './types';
+import { imageAPI } from '../../../imageAPI';
+import { ImageListStyle } from '../CarouselStyles';
+import { imageListProps } from '../types';
 
 export default function ImageList({ imageRef, imageListRef }: imageListProps) {
   return (
