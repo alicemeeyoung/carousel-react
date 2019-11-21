@@ -45,14 +45,12 @@ export const ImageStyle = styled.img`
 export const ImageListStyle = styled.div`
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-padding: 0 1 rem;
-  list-style: none;
-
-  overflow-x: auto:
-  overflow-y: hidden;s
-  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  list-style: none;
+  -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
 
   ::-webkit-scrollbar {
