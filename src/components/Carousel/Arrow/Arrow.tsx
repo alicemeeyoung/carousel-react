@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { Arrows } from '../enums';
 import { ArrowStyles } from '../CarouselStyles';
@@ -24,8 +24,12 @@ export default function Arrow({
     }
   };
 
+  const arrowCallback = useCallback(() => {
+    handleArrowClick(arrow);
+  }, [arrow, handleArrowClick]);
+
   return (
-    <ArrowStyles onClick={() => handleArrowClick(arrow)}>
+    <ArrowStyles onClick={arrowCallback}>
       {arrow === 'left' ? (
         <img src="/arrow_left.png" alt="Left arrow" />
       ) : (
