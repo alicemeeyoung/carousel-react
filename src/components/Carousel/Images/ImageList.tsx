@@ -1,7 +1,4 @@
 import React from 'react';
-/** @jsx jsx */
-import { jsx, css } from '@emotion/core';
-
 import Image from './Image';
 import { imageAPI } from '../../../imageAPI';
 import { ImageListStyle } from '../CarouselStyles';

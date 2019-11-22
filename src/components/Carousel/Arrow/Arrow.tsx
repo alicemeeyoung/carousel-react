@@ -12,7 +12,8 @@ export default function Arrow({
   lengthOfAPI,
   imageRef
 }: arrowProps) {
-  const handleArrowClick = (direction: Arrows): void => {
+  const arrowCallback = useCallback(() => {
+    const direction = arrow;
     if (direction === 'left' && currentImageId !== 0) {
       scrollTo(imageRef.current[currentImageId - 1]);
       setCurrentImageId(currentImageId - 1);
@@ -26,11 +27,7 @@ export default function Arrow({
       scrollTo(imageRef.current[0]);
       setCurrentImageId(0);
     }
-  };
-
-  const arrowCallback = useCallback(() => {
-    handleArrowClick(arrow);
-  }, [arrow, handleArrowClick]);
+  }, [currentImageId, imageRef, lengthOfAPI, setCurrentImageId]);
 
   return (
     <ArrowStyles onClick={arrowCallback}>
