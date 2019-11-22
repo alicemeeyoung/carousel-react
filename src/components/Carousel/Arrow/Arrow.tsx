@@ -16,11 +16,15 @@ export default function Arrow({
     if (direction === 'left' && currentImageId !== 0) {
       scrollTo(imageRef.current[currentImageId - 1]);
       setCurrentImageId(currentImageId - 1);
-    }
-
-    if (direction === 'right' && lengthOfAPI && currentImageId < lengthOfAPI) {
+    } else if (direction === 'left' && currentImageId === 0) {
+      scrollTo(imageRef.current[lengthOfAPI - 1]);
+      setCurrentImageId(lengthOfAPI - 1);
+    } else if (direction === 'right' && currentImageId < lengthOfAPI - 1) {
       scrollTo(imageRef.current[currentImageId + 1]);
       setCurrentImageId(currentImageId + 1);
+    } else {
+      scrollTo(imageRef.current[0]);
+      setCurrentImageId(0);
     }
   };
 

@@ -16,7 +16,7 @@ export type arrowProps = {
   arrow: Arrows;
   setCurrentImageId: React.Dispatch<React.SetStateAction<number>>;
   currentImageId: number;
-  lengthOfAPI?: number;
+  lengthOfAPI: number;
   imageRef: React.MutableRefObject<React.RefObject<HTMLImageElement>[]>;
 };
 
