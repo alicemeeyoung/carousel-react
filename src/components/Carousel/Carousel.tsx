@@ -4,7 +4,6 @@ import ImageList from './Images/ImageList';
 import Dots from './Dots/Dots';
 import { Arrows } from './enums';
 import { ImageRefType } from './types';
-// import { imageAPI } from '../../imageAPI';
 import { CarouselContainer, DotsContainer } from './CarouselStyles';
 
 export default function Carousel() {
