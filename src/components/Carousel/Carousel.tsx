@@ -1,21 +1,33 @@
-import React, { useState, useRef, createRef } from 'react';
+import React, { useState, useRef, createRef, useEffect } from 'react';
 import Arrow from './Arrow/Arrow';
 import ImageList from './Images/ImageList';
 import Dots from './Dots/Dots';
 import { Arrows } from './enums';
-import { imageAPI } from '../../imageAPI';
+import { ImageRefType } from './types';
+// import { imageAPI } from '../../imageAPI';
 import { CarouselContainer, DotsContainer } from './CarouselStyles';
 
 export default function Carousel() {
-  const [currentImageId, setCurrentImageId] = useState<number>(0);
+  const [ currentImageId, setCurrentImageId ] = useState<number>(0);
+  const [ imageAPI, setImageAPI ] = useState([]);
+
+  useEffect(() => {
+    async function fetching() {
+      try {
+        const api = await fetch('https://aged-toque.glitch.me/');
+        const imageAPI = await api.json();
+        setImageAPI(imageAPI);
+      } catch (error) {
+        console.log('An error occurred on fetching api: ', error);
+      }
+    }
+    fetching();
+  }, []);
+
   const lengthOfAPI: number = Object.keys(imageAPI).length;
-
   // Create refs
-  const imageRef: React.MutableRefObject<React.RefObject<
-    HTMLImageElement
-  >[]> = useRef(imageAPI.map(() => createRef()));
+  const imageRef: ImageRefType = useRef(imageAPI.map(() => createRef()));
   const imageListRef: React.MutableRefObject<null> = useRef(null);
-
   return (
     <div css={{ width: '50%', margin: 'auto' }} className="carousel">
       <CarouselContainer>
@@ -26,7 +38,7 @@ export default function Carousel() {
           currentImageId={currentImageId}
           lengthOfAPI={lengthOfAPI}
         />
-        <ImageList imageListRef={imageListRef} imageRef={imageRef} />
+        <ImageList imageAPI={imageAPI} imageListRef={imageListRef} imageRef={imageRef} />
         <Arrow
           imageRef={imageRef}
           arrow={Arrows.Right}

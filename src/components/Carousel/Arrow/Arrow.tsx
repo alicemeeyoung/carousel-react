@@ -1,6 +1,4 @@
 import React, { useCallback } from 'react';
-
-import { Arrows } from '../enums';
 import { ArrowStyles } from '../CarouselStyles';
 import { arrowProps } from '../types';
 import { scrollTo } from '../shared';
@@ -27,7 +25,7 @@ export default function Arrow({
       scrollTo(imageRef.current[0]);
       setCurrentImageId(0);
     }
-  }, [currentImageId, imageRef, lengthOfAPI, setCurrentImageId]);
+  }, [arrow, currentImageId, imageRef, lengthOfAPI, setCurrentImageId]);
 
   return (
     <ArrowStyles onClick={arrowCallback}>
