@@ -27,7 +27,7 @@ const noOutline = css({
   outline: 0
 });
 
-export const DotButton = styled.button(props => ({
+export const DotButton = styled.button((props) => ({
   border: '1px solid black',
   borderRadius: '50%',
   width: '1rem',
@@ -38,12 +38,11 @@ export const DotButton = styled.button(props => ({
   ':focus': noOutline
 }));
 
-export const ImageStyle = styled.img`
-  scroll-snap-align: start;
-`;
+export const ImageStyle = styled.img`scroll-snap-align: start;`;
 
 export const ImageListStyle = styled.div`
   display: flex;
+  max-width: 40%;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;

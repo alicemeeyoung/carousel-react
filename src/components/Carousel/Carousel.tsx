@@ -13,7 +13,7 @@ export default function Carousel({ imageAPI }: { imageAPI: API[] }) {
   const imageRef: ImageRefType = useRef(imageAPI.map(() => createRef()));
   const imageListRef: React.MutableRefObject<null> = useRef(null);
   return (
-    <div css={{ width: '50%', margin: 'auto' }} className="carousel">
+    <div className="carousel">
       <CarouselContainer>
         <Arrow
           imageRef={imageRef}
