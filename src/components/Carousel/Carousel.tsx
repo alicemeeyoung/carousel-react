@@ -3,26 +3,11 @@ import Arrow from './Arrow/Arrow';
 import ImageList from './Images/ImageList';
 import Dots from './Dots/Dots';
 import { Arrows } from './enums';
-import { ImageRefType } from './types';
+import { ImageRefType, API } from './types';
 import { CarouselContainer, DotsContainer } from './CarouselStyles';
 
-export default function Carousel() {
+export default function Carousel({ imageAPI }: { imageAPI: API[] }) {
   const [ currentImageId, setCurrentImageId ] = useState<number>(0);
-  const [ imageAPI, setImageAPI ] = useState([]);
-
-  useEffect(() => {
-    async function fetching() {
-      try {
-        const api = await fetch('https://aged-toque.glitch.me/');
-        const imageAPI = await api.json();
-        setImageAPI(imageAPI);
-      } catch (error) {
-        console.log('An error occurred on fetching api: ', error);
-      }
-    }
-    fetching();
-  }, []);
-
   const lengthOfAPI: number = Object.keys(imageAPI).length;
   // Create refs
   const imageRef: ImageRefType = useRef(imageAPI.map(() => createRef()));

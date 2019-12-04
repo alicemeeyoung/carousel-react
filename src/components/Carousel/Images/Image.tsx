@@ -6,6 +6,5 @@ import { imageProps } from '../types';
 export default function Image({ source, imageRef, index }: imageProps) {
   if (!source) source = '';
   imageRef.current[index] = createRef();
-  //@ts-ignore
   return <ImageStyle ref={imageRef.current[index]} src={source} width="100%" alt="" />;
 }
