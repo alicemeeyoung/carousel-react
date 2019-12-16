@@ -1,3 +1,12 @@
+## Carousel
+
+Image carousel built with TypeScript, React 16.8 (hooks), and emotion (CSS-in-JS library). Uses Glitch for API.
+
+## Get Started
+- Clone Repo
+- `npm start` to launch app 
+- Open `localhost:3000` to view carousel
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
