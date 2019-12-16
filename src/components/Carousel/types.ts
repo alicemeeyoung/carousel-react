@@ -3,7 +3,6 @@ import { Arrows } from './enums';
 // Props
 export type imageListProps = {
   imageRef: ImageRefType;
-  imageListRef: React.MutableRefObject<null>;
   imageAPI: API[];
 };
 

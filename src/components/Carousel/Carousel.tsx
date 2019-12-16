@@ -11,7 +11,6 @@ export default function Carousel({ imageAPI }: { imageAPI: API[] }) {
   const lengthOfAPI: number = Object.keys(imageAPI).length;
   // Create refs
   const imageRef: ImageRefType = useRef(imageAPI.map(() => createRef()));
-  const imageListRef: React.MutableRefObject<null> = useRef(null);
   return (
     <div className="carousel">
       <CarouselContainer>
@@ -22,7 +21,7 @@ export default function Carousel({ imageAPI }: { imageAPI: API[] }) {
           currentImageId={currentImageId}
           lengthOfAPI={lengthOfAPI}
         />
-        <ImageList imageAPI={imageAPI} imageListRef={imageListRef} imageRef={imageRef} />
+        <ImageList imageAPI={imageAPI} imageRef={imageRef} />
         <Arrow
           imageRef={imageRef}
           arrow={Arrows.Right}
