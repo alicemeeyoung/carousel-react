@@ -16,7 +16,7 @@ const App: React.FC = () => {
       }
     }
     fetching();
-  });
+  }, []);
 
   return (
     <div className="App">
