@@ -11,8 +11,5 @@ export default function Dot({ id, currentImageId, setCurrentImageId, imageRef }:
     setCurrentImageId(id);
   };
 
-  return (
-    //@ts-ignore
-    <DotButton pressed={pressed} onClick={handleDotClick} />
-  );
+  return <DotButton pressed={pressed} onClick={handleDotClick} />;
 }
